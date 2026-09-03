@@ -77,3 +77,32 @@ return fare ;
 }
 
 // console.log(getCngFare(15, true, 5));
+
+
+//Question 5 
+const  getChaseVerdict =(target, scored, ballsLeft) =>{
+    const runsNeeded = target -  scored;
+
+    if (runsNeeded <= 0){
+        return "Won";
+
+    }
+    if(ballsLeft <= 0){
+        return "Lost";
+    }
+
+
+    const requiredRate = (runsNeeded / ballsLeft) * 6;
+
+    let verdict;
+    if (requiredRate <= 6){
+        verdict = "comfortable";
+    } else if (requiredRate <= 12){
+        verdict = "Tough";
+    } else{
+        verdict = " Almost Impossible";
+    }
+    return `Need ${runsNeeded} runs in ${ballsLeft} balls | ${verdict}`;
+};
+
+console.log(getChaseVerdict (150,100,30));
