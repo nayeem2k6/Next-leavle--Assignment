@@ -1,8 +1,14 @@
-function describeValue(value){
+ 
+ 
+//question 1
+
+ function describeValue(value){
     return `${typeof value} | ${value ? "truthy" : "falsy"}`;
 }
-console.log (describeValue("Hello"));
-console.log (describeValue(""));
+
+
+// console.log (describeValue("Hello"));
+// console.log (describeValue(""));
 
 
 
@@ -30,4 +36,22 @@ function getDayType(day){
     }
 }
 
-console.log(getDayType("friday"));
+// console.log(getDayType("friday"));
+
+
+
+
+//question 3
+function validateUsername(username){
+    if (username.langhth < 4){
+        return "too Short";
+    } else if (username.includes(" ")){
+        return "No spaces allowed";
+    }else if (username.toLowerCase().includes("admin")){
+        return "Reserved Word";
+    }else{
+        return "Available";
+    }
+}
+
+// console.log(validateUsername("admin123"));
